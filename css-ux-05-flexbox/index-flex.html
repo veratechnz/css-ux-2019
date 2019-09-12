@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flexbox Basics</title>
+	<style>
+		html {
+			font-family: 'Raleway', sans-serif;
+		}
+
+		h1 {
+			font-weight: 100;
+		}
+
+		.inner {
+			background-color: #efefef;
+			height: 220px;
+			font-size: 24px;
+			text-align: center;
+			margin: 0.2em;
+		}
+
+/* Flexbox for Container A Starts Here */
+		.container-a {
+			/* This property applies the flexbox display to the container div, also see flex: 1 value below; */
+			display: flex;
+		}
+
+		.container-a .inner {
+			/* Equivalent to flex: <positive-number> 1 0. Makes the flex item flexible and sets the flex basis to zero, resulting in an item that receives the specified proportion of the free space in the flex container. If all items in the flex container use this pattern, their sizes will be proportional to the specified flex factor. */
+			flex: 1;
+			background-color: #efefef;
+			height: 220px;
+			font-size: 24px;
+			text-align: center;
+			margin: 0.2em;
+		}
+
+		/* Media Query For Mobile That Demonstrates how to control */
+		/* flexbox to make a stack on mobile */
+		@media only screen and (max-width: 600px) {
+			.container-a {
+				/* This property applies the flexbox display to the container div */
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+			}
+		}
+/* Flexbox for Container A ENDS Here */
+
+/* Flexbox for Container B Starts Here */
+		.container-b {
+			display: flex;
+			/*You can un-comment these one at a time to see the different css flex positions*/
+			/*justify-content: flex-end;*/
+			/*justify-content: flex-start;*/
+/*			justify-content: center;
+			justify-content: space-between;
+			justify-content: space-around;*/
+			justify-content: space-evenly;
+		}
+		.container-b .inner {
+			width: 15%;
+		}
+/* Flexbox for Container B ENDS Here */
+
+/* Flexbox for Container C STARTS Here */
+
+		nav ul {
+		  /* Here we use flex and justify-content: space-between; to create an evenly */
+		  /* Spread horizontal nav menu */
+		  display: flex;
+		  justify-content: space-between;
+		  width: 58vw;
+		  margin: 0 auto;
+		  border: 1px solid #efefef;
+		  padding: 1.5em;
+		  list-style: none;
+		}
+
+		nav li a {
+			text-decoration: none;
+			color: #000;
+		}
+
+/* Flexbox for Container C ENDS Here */
+
+/* Flexbox for Container D STARTS Here */
+		/* This is great we can use a flex combination of align-items: center and 
+		justify-content: center on both the parent and child to perfectly center
+		both the box and the text inside (horizontally and vertically) */
+		.container-d {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 400px;
+			border: 1px solid #efefef;
+		}
+
+		.container-d .inner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 150px;
+			height: 150px;
+			background-color: #000;
+			color: #fff;
+		}
+/* Flexbox for Container D ENDS Here */
+
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<h1>1. Container A - A row of flexbox with child elements using flex: 1; to spread the child elements evenly</h1>
+	<div class="container-a">
+		<div class="inner">1</div>
+		<div class="inner">2</div>
+		<div class="inner">3</div>
+		<div class="inner">4</div>
+		<div class="inner">5</div>
+		<div class="inner">6</div>
+		<div class="inner">7</div>
+		<div class="inner">8</div>
+	</div>
+
+	<h1>2. Container B - Some different justified content positions</h1>
+	<div class="container-b">
+		<div class="inner">1</div>
+		<div class="inner">2</div>
+		<div class="inner">3</div>
+		<div class="inner">4</div>
+	</div>
+
+	<h1>3. Container C - An evenly spaced nav with justify-content: space-between.</h1>
+	<nav>
+	    <ul>
+	        <li><a href="#">Page 1</a></li>
+	        <li><a href="#">Page 2</a></li>
+	        <li><a href="#">Page 3 is longer</a></li>
+	        <li><a href="#">Page 4</a></li>
+	    </ul>
+	</nav>
+
+	<h1>4. Container D - Center an item - both ways with - display: flex; align-items: center; justify-content: center;</h1>
+	<div class="container-d">
+		<div class="inner">Centered</div>
+	</div>
+
+
+</body>
+</html>

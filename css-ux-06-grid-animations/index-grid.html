@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - Grid</title>
+	<link href="https://fonts.googleapis.com/css?family=Gruppo&display=swap" rel="stylesheet">
+</head>
+	<style>
+		html,
+		body {
+			height: 100%;
+			font-size: 16px;
+			margin: 0;
+			font-family: 'Gruppo', cursive;
+		}
+
+		h1 {
+			font-size: 2.2rem;
+		}
+
+
+		/**** GRID CSS STARTS HERE ****/
+		.contain {
+			/*We use the .contain class as the parent element to apply css grid*/
+			display: grid;
+			padding: 1em;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		/* Media Query For Mobile That Demonstrates how to control */
+		/* a css grid */
+		@media only screen and (max-width: 600px) {
+			.contain {
+				display: grid;
+				padding: 1em;
+				/* Parentheses // Parameters */
+				/*grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));*/
+				grid-template-columns: 1fr;
+			}
+		}
+		/**** GRID CSS ENDS HERE ****/
+
+		.card {
+			cursor: pointer;
+		}
+
+		/*Image Control and styling*/
+		.hover-image {
+			width: 0%;
+		}
+
+		.display-image {
+			width: 100%;
+		}
+
+
+
+
+
+
+/* *** ALL CSS ANIMATIONS WITH TRANSITIONS *** */
+		.hosoi-hammerhead:hover .hover-image{
+			transition: width 0.65s ease-in-out;
+			-webkit-transition: width 0.65s ease-in-out;
+			width: 15%;
+			position: absolute;
+			top: 35%;
+			-webkit-box-shadow: -1px 0px 10px -1px rgba(0,0,0,0.75);
+			-moz-box-shadow: -1px 0px 10px -1px rgba(0,0,0,0.75);
+			box-shadow: -1px 0px 10px -1px rgba(0,0,0,0.75);
+		}
+
+		.btn {
+			background-color: #efefef;
+			box-shadow: none;
+			border: none;
+			width: 8em;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 2.5em;
+			margin-top: 2.5em;
+			padding: 0.75em;
+		}
+
+		/*Css Animation Via Transitions*/
+		.santa-skull:hover  {
+			-webkit-transition: border 0.5s ease; 
+			transition: border 0.5s ease;
+			border: 4px solid red;
+		}
+		
+/*
+		When I hover this card
+		I want the title of it to turn blue
+		across 0.65 seconds*/
+		.peralta-bones:hover  .title{
+	      -webkit-transition: color 0.5s ease;
+	      transition: color 0.5s ease;
+	      color: blue;
+		}
+
+		.santa-rosko:hover .title{
+			-webkit-transition: color 1s ease, font-size 1s ease;
+			transition: color 1s ease, font-size 1s ease;
+			font-size: 1.6em;
+			color: blue;
+		}
+
+		.santa-hand:hover {
+			transition: background-color 2s ease-out;
+			background-color: green;
+			color: white;
+			padding: 0.85em;
+		}
+
+		.santa-tiger:hover {
+			transition: transform 2s;
+			transform: rotate(270deg);
+		}
+
+		.sun-god:hover {
+			transition: transform 3s;
+			transform: rotateY(180deg);	
+		}
+
+		.peralta-caballero:hover {
+			transition: margin-left 3s ease;
+			margin-left: 8rem;
+		}
+
+		.peralta-caballero-free {
+			width: 300px;
+			/*margin: 0 auto;*/
+		}
+
+		.go-away {
+			transition: margin-left 3s ease;
+			margin-left: -18rem;
+		}
+/* *** ALL CSS ANIMATIONS WITH TRANSITIONS END *** */
+
+	</style>
+	<body>
+		
+		<h1>Skate Design</h1>
+
+		<div class="contain">
+			<div class="card santa-skull">
+			    <div class="info">
+			        <p class="title">Santa Cruz Santa Skull</p>
+			        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+			        <button class="btn">Animate</button>        
+			    </div>
+			    <img src="santa-skull.png" class="display-image">
+			    <img src="santa-skull.png" class="hover-image">
+			</div>
+		    <div class="card hosoi-hammerhead">
+		        <div class="info">
+		            <p class="title">Christian Hosoi Hammerhead</p>
+		            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+		            <button class="btn">Animate</button>        
+		        </div>
+		        <img src="hosoi.png" class="display-image">
+		        <img src="hosoi.png" class="hover-image hosoi-hammer-image">
+		    </div>
+		    <div class="card peralta-bones">
+		        <div class="info">
+		            <p class="title bones-title">Powell Peralta Bones Brigade</p>
+		            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+		            <button class="btn">Animate</button>        
+		        </div>
+		        <img src="powell-peralta.png" class="display-image">
+		        <img src="powell-peralta.png" class="hover-image">
+		    </div>
+		    <div class="card santa-rosko">
+		        <div class="info">
+		            <p class="title">Santa Cruz Rosko</p>
+		            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+		            <button class="btn">Animate</button>        
+		        </div>
+		        <img src="santa-cruz-mini-rosko.png" class="display-image">
+		        <img src="santa-cruz-mini-rosko.png" class="hover-image">
+		    </div>
+		    <div class="card santa-hand">
+		        <div class="info">
+		            <p class="title">Santa Cruz Screaming Hand</p>
+		            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+		            <button class="btn">Animate</button>        
+		        </div>
+		        <img src="santa-cruz-screaming-hand.png" class="display-image">
+		        <img src="santa-cruz-screaming-hand.png" class="hover-image">
+		    </div>
+		    <div class="card santa-tiger">
+		        <div class="info">
+		            <p class="title">Santa Cruz Jungle Tiger</p>
+		            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+		            <button class="btn">Animate</button>    
+		        </div>
+		        <img src="santa-tiger.png" class="display-image">
+		        <img src="santa-tiger.png" class="hover-image">
+		    </div>
+		    <div class="card sun-god">
+		        <div class="info">
+		            <p class="title">Santa Cruz Jesse Sun God</p>
+		            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+		            <button class="btn">Animate</button>   
+		        </div>
+		        <img src="sun-fire.png" class="display-image">
+		        <img src="sun-fire.png" class="hover-image">
+		    </div>
+		    <div class="card peralta-caballero">
+		        <div class="info">
+		            <p class="title">Santa Cruz Caballero</p>
+		            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+		            <button class="btn">Animate</button>       
+		        </div>
+		        <img src="caballero.png" class="display-image">
+		        <img src="caballero.png" class="hover-image">
+		    </div>
+		</div>
+		<!-- Contain Class ENDs -->
+
+
+
+
+
+	
+		<!-- Peralta-caballero Starts -->
+		<h1>This div is freeand has no grid control</h1>
+		<div class="card peralta-caballero-free">
+		    <div class="info">
+		        <p class="title">Santa Cruz Caballero</p>
+		        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia consectetur sapiente ipsam nihil velit quae ab unde quasi exercitationem esse</p>
+		        <button class="btn trigger">Trigger</button>       
+		    </div>
+		    <img src="caballero.png" class="display-image">
+		    <img src="caballero.png" class="hover-image">
+		</div>
+		<!-- Peralta-caballero ENDS -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				// Stuff happens here
+				// console.log($('.trigger'))
+				$('.trigger').click(function(){
+					//Do stuff after click
+					$('.peralta-caballero-free').addClass('go-away');
+				});	
+			});
+		</script>
+	</body>
+</html>
