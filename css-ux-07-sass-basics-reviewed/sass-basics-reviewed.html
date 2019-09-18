@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Sass Basics Reviewed</title>
 	<style>
-		/*Variables*/
+		/*1. Variables*/
 
 		/*	$font-stack:    Helvetica, sans-serif;
 		$primary-color: #333;
@@ -18,7 +18,7 @@
 		  color: #333;
 		}
 
-		/*Nesting*/
+		/*2. Nesting*/
 
 		/*	  $color-b: purple;
 	    $font-stack: Helvetica, sans-serif;
@@ -37,7 +37,7 @@
 		  color: purple;
 		}
 
-		/*Partials*/
+		/*3. Partials*/
 		/*@import 'reset';*/
 
 		html,
@@ -48,14 +48,61 @@
 		  padding: 0;
 		}
 
+		
+		/*4. Mixins*/
+/*		@mixin transform-shadow($property) {
+			-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+			box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+		}
 
+		@mixin push-auto {
+	    margin: { 
+	        left: auto;
+	        right: auto;
+	    }
+		}
+
+		h3 {
+			width: 12em;
+			padding: 2.5em;
+			@include transform-shadow(rgba(119, 14, 70, 1)); 
+			@include push-auto;
+		}*/
+
+		h3 {
+		  width: 12em;
+			padding: 2.5em;
+		  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+		  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+		  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+
+	/*5. Extend Inheritance*/
+/*	%big-blue {
+		font-size: 2.5em;
+		font-weight: 800;
+		color: blue;
+	}
+
+	h4 {
+		@extend %big-blue;
+	}*/
+
+	h4 {
+	  font-size: 2.5em;
+	  font-weight: 800;
+	 	color: blue;
+	}
 
 	</style>
 </head>
 <body>
 	<h1>Using Variables</h1>
-
 	<h2>This Is <span>Nesting</span></h2>
-	<h3>Good Evening</h3>
+	<h3>Mixin Time</h3>
+	<h4>This Is Extend Inheritance</h4>
 </body>
 </html>
