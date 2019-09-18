@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sass Basics Reviewed</title>
+	<style>
+		/*Variables*/
+
+		/*	$font-stack:    Helvetica, sans-serif;
+		$primary-color: #333;
+
+		h1 {
+		  font: 100% $font-stack;
+		  color: $primary-color;
+		}*/
+		h1 {
+		  font: 100% Helvetica, sans-serif;
+		  color: #333;
+		}
+
+		/*Nesting*/
+
+		/*	  $color-b: purple;
+	    $font-stack: Helvetica, sans-serif;
+
+			h2 {
+				span {
+					font: $font-stack;
+					font-size: 22px;
+					color: $color-b;
+				}
+			}*/
+
+		h2 span {
+		  font: Helvetica, sans-serif;
+		  font-size: 35px;
+		  color: purple;
+		}
+
+		/*Partials*/
+		/*@import 'reset';*/
+
+		html,
+		body,
+		ul,
+		ol {
+		  margin:  0;
+		  padding: 0;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<h1>Using Variables</h1>
+
+	<h2>This Is <span>Nesting</span></h2>
+	<h3>Good Evening</h3>
+</body>
+</html>
